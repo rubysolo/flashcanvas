@@ -950,8 +950,10 @@ FlashCanvas[initWindow] = function(window){
     document.createElement(CANVAS);
 
     // setup default CSS
-    document.createStyleSheet().cssText =
+    var styleSheet = document.createElement('STYLE');
+    styleSheet.cssText =
         CANVAS + "{display:inline-block;overflow:hidden;width:300px;height:150px}";
+    document.documentElement.firstChild.appendChild(styleSheet);
 
     var canvases = this[canvasesProp]
 
